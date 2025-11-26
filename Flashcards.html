@@ -20,6 +20,7 @@
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;Flashcards: Voeding &amp; Beweging&lt;/title&gt;</span></p>
 <p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- MathJax configuratie voor wiskundige formules --&gt;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>window.MathJax = {</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>tex: {</span></p>
@@ -30,9 +31,11 @@
 <p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- MathJax script laden --&gt;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"&gt;&lt;/script&gt;</span></p>
 <p class="p2"><span class="s1"></span><br></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Algemene opmaak */</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body {</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #f0f2f5;</span></p>
@@ -49,26 +52,28 @@
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #2c3e50;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 10px;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 1.8rem;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
 <p class="p2"><span class="s1"></span><br></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.instruction {</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 0.9em;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #7f8c8d;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 25px;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-style: italic;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
 <p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* De container voor de kaart */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Container voor de kaart */</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.card-container {</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: transparent;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>max-width: 600px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 300px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>perspective: 1000px; /* Dit zorgt voor het 3D effect */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 320px; /* Vaste hoogte */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>perspective: 1000px; /* Zorgt voor het 3D effect */</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>cursor: pointer;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
 <p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* De binnenkant die draait */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* De binnenkant die daadwerkelijk draait */</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.card-inner {</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: relative;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
@@ -76,11 +81,11 @@
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: transform 0.6s;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform-style: preserve-3d;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 15px rgba(0,0,0,0.1);</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 15px;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
 <p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Klasse om te draaien (wordt toegevoegd met JS) */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Klasse om te draaien (wordt toegevoegd met Javascript) */</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.flipped {</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform: rotateY(180deg);</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
@@ -90,47 +95,53 @@
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: absolute;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 100%;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>-webkit-backface-visibility: hidden;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>-webkit-backface-visibility: hidden; /* Safari */</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>backface-visibility: hidden;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 15px;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>align-items: center;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>justify-content: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 25px;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 1.3em;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>line-height: 1.5;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
 <p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Voorkant styling */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Specifieke styling voorkant */</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.card-front {</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: white;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #333;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 2px solid #3498db;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
 <p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Achterkant styling */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Specifieke styling achterkant */</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.card-back {</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #3498db;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: white;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform: rotateY(180deg);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transform: rotateY(180deg); /* Staat standaard gedraaid */</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
 <p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Knoppen onderaan */</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.controls {</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 30px;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>display: flex;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>gap: 15px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>gap: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>max-width: 600px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>justify-content: center;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
 <p class="p2"><span class="s1"></span><br></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>button {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 10px 20px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 16px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 12px 25px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 1rem;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>cursor: pointer;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #2c3e50;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: white;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 5px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 8px;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: background 0.3s;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>flex: 1; /* Knoppen worden even groot */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>max-width: 150px;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
 <p class="p2"><span class="s1"></span><br></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>button:hover {</span></p>
@@ -143,16 +154,28 @@
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
 <p class="p2"><span class="s1"></span><br></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.progress {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 15px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 20px;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #7f8c8d;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-weight: 600;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Mobiele aanpassingen */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>@media (max-width: 600px) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>.card-container {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>height: 400px; /* Iets hoger op mobiel voor lange tekst */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>h1 {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>font-size: 1.5rem;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
 <p class="p1"><span class="s1">&lt;/head&gt;</span></p>
 <p class="p1"><span class="s1">&lt;body&gt;</span></p>
 <p class="p2"><span class="s1"></span><br></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Studiekaarten: Voeding &amp; Beweging&lt;/h1&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="instruction"&gt;Klik op de kaart om het antwoord te zien&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="instruction"&gt;Klik op de kaart om het antwoord te zien of te verbergen.&lt;/div&gt;</span></p>
 <p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- De Kaart --&gt;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="card-container" onclick="flipCard()"&gt;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="card-inner" id="card-inner"&gt;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="card-front"&gt;</span></p>
@@ -164,15 +187,16 @@
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
 <p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Besturing --&gt;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="controls"&gt;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button id="prevBtn" onclick="prevCard()"&gt;Vorige&lt;/button&gt;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button id="nextBtn" onclick="nextCard()"&gt;Volgende&lt;/button&gt;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="progress" id="progress"&gt;Kaart 1 van ...&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="progress" id="progress"&gt;Kaart 1 van 25&lt;/div&gt;</span></p>
 <p class="p2"><span class="s1"></span><br></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Data van de flashcards.<span class="Apple-converted-space"> </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Let op de dubbele backslashes (\\) voor LaTeX formules!</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// De Data van de flashcards</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Let op: Dubbele backslashes (\\) zijn nodig voor de formules in Javascript strings!</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const cards = [</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{ front: "Hoofddoel van een warming-up", back: "Het verhogen van de lichaamstemperatuur en de bloedcirculatie om het lichaam voor te bereiden op inspanning." },</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>{ front: "Betekenis CLUKS", back: "Coördinatie, Lenigheid, Uithoudingsvermogen, Kracht, Snelheid" },</span></p>
@@ -202,6 +226,8 @@
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>];</span></p>
 <p class="p2"><span class="s1"></span><br></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let currentIndex = 0;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Elementen ophalen</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const cardInner = document.getElementById('card-inner');</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const frontText = document.getElementById('front-text');</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const backText = document.getElementById('back-text');</span></p>
@@ -209,6 +235,7 @@
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const prevBtn = document.getElementById('prevBtn');</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const nextBtn = document.getElementById('nextBtn');</span></p>
 <p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Functie om de kaart content te updaten</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function updateCard() {</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Content invullen</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>frontText.innerHTML = cards[currentIndex].front;</span></p>
@@ -217,38 +244,47 @@
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Progress update</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>progress.innerText = `Kaart ${currentIndex + 1} van ${cards.length}`;</span></p>
 <p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Knoppen disablen</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Knoppen aan/uit zetten</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>prevBtn.disabled = currentIndex === 0;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>nextBtn.disabled = currentIndex === cards.length - 1;</span></p>
 <p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// MathJax herladen voor formules</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (window.MathJax) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>MathJax.typesetPromise([frontText, backText]).catch((err) =&gt; console.log(err));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// MathJax vertellen dat er nieuwe formules zijn om te renderen</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (window.MathJax &amp;&amp; window.MathJax.typesetPromise) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>window.MathJax.typesetPromise([frontText, backText]).catch((err) =&gt; console.log('MathJax error:', err));</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
 <p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Functie om kaart om te draaien</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function flipCard() {</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>cardInner.classList.toggle('flipped');</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
 <p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Volgende kaart logic</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function nextCard() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Stop propagation (voorkom dat hij flipt als je op de knop drukt)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>event.stopPropagation();</span></p>
+<p class="p2"><span class="s1"></span><br></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (currentIndex &lt; cards.length - 1) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// Als de kaart gedraaid is, draai hem eerst terug zonder animatie-vertraging voor de gebruiker</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>// Als de kaart gedraaid is (achterkant zichtbaar), draai hem eerst terug</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (cardInner.classList.contains('flipped')) {</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>cardInner.classList.remove('flipped');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>// Wacht heel even met nieuwe content laden zodat de kaart 'dicht' is</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>// Wacht heel even met nieuwe content laden tot de kaart 'dicht' is (300ms)</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>setTimeout(() =&gt; {</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>currentIndex++;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>updateCard();</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>}, 300);</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>// Als hij al aan de voorkant is, direct updaten</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>currentIndex++;</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>updateCard();</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
 <p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Vorige kaart logic</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function prevCard() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>event.stopPropagation();</span></p>
+<p class="p2"><span class="s1"></span><br></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (currentIndex &gt; 0) {</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (cardInner.classList.contains('flipped')) {</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>cardInner.classList.remove('flipped');</span></p>
@@ -263,17 +299,35 @@
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
 <p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Keyboard support</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Toetsenbord ondersteuning (Pijltjes + Spatie)</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.addEventListener('keydown', (e) =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (e.key === 'ArrowRight') nextCard();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (e.key === 'ArrowLeft') prevCard();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (e.key === 'ArrowRight') {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if(currentIndex &lt; cards.length - 1) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>if (cardInner.classList.contains('flipped')) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>cardInner.classList.remove('flipped');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>setTimeout(() =&gt; { currentIndex++; updateCard(); }, 300);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>currentIndex++; updateCard();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (e.key === 'ArrowLeft') {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if(currentIndex &gt; 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                     </span>if (cardInner.classList.contains('flipped')) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>cardInner.classList.remove('flipped');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>setTimeout(() =&gt; { currentIndex--; updateCard(); }, 300);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>currentIndex--; updateCard();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (e.key === ' ' || e.key === 'Enter') {</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>e.preventDefault();<span class="Apple-converted-space"> </span></span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>flipCard();</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
 <p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Start de app</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Start de applicatie</span></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>updateCard();</span></p>
 <p class="p2"><span class="s1"></span><br></p>
 <p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
